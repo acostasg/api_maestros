@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+version '0.6.2-SNAPSHOT'
+sourceCompatibility = 1.8
+
+bootJar {
+    baseName = 'api-maestros'
+    version = '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.proxy.api.ApiMaestrosApplication'
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootJar {
+    launchScript()
+}
+
+configurations.all {
+    exclude module: 'slf4j-log4j12'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('com.oracle.tools:oracle-tools-all:1.2.2')
+    compile('org.projectlombok:lombok')
+    compile('com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre8')
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
+    testCompile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.4.0.jre8'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
