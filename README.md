@@ -36,8 +36,9 @@ Requeriments:
 The database connection (SQLServer o SQLServerExpress) options add in:
 * api_maestros/src/main/resources/application.properties
 
-#TODO add container with development database SQLServerExpress in docker-compose.yml
+#TODO 
+Add container with development database SQLServerExpress in docker-compose.yml
 * https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-linux-2017
 
-#TODO parameterize resource path to image server for ImageController proxy
->>>>>>> bfc6cf6d76867c2d37920b59583ce6507ea9c424
+#TODO
+Parameterize resource path to image server for ImageController proxy
