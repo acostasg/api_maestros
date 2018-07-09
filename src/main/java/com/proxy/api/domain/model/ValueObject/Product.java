@@ -1,9 +1,6 @@
 package com.proxy.api.domain.model.ValueObject;
 
-import com.proxy.api.domain.model.Kpi_Input;
-import com.proxy.api.domain.model.Kpi_Precio_Venta;
-import com.proxy.api.domain.model.Kpi_Stock;
-import com.proxy.api.domain.model.Kpi_Venta;
+import com.proxy.api.domain.model.*;
 
 import java.util.List;
 
@@ -13,17 +10,20 @@ public class Product {
     private Kpi_Stock StockActual;
     private List<Kpi_Precio_Venta> PrecioVentasActual;
     private List<Kpi_Input> InputsMercadona;
+    private List<Kpi_Venta_Mensuales> VentasPorMeses;
 
     public Product(
             Kpi_Venta kpiVenta,
             Kpi_Stock kpiStocks,
             List<Kpi_Precio_Venta> kpiPrecioVentas,
-            List<Kpi_Input> kpiInputs
+            List<Kpi_Input> kpiInputs,
+            List<Kpi_Venta_Mensuales> kpiVentaMensuales
     ) {
         this.VentasAcumuladasUltimoAño = kpiVenta;
         this.StockActual = kpiStocks;
         this.PrecioVentasActual = kpiPrecioVentas;
         this.InputsMercadona = kpiInputs;
+        this.VentasPorMeses = kpiVentaMensuales;
     }
 
     public Kpi_Venta getVentasAcumuladasUltimoAño() {
@@ -40,5 +40,9 @@ public class Product {
 
     public List<Kpi_Input> getInputsMercadona() {
         return InputsMercadona;
+    }
+
+    public List<Kpi_Venta_Mensuales> getVentasPorMeses() {
+        return VentasPorMeses;
     }
 }
