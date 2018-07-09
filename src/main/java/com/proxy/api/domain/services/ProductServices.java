@@ -1,23 +1,34 @@
 package com.proxy.api.domain.services;
 
-import com.proxy.api.domain.model.Producto;
-import com.proxy.api.domain.repositories.ProductRepositoryInterface;
+import com.proxy.api.domain.model.ValueObject.Product;
+import com.proxy.api.domain.repositories.InputsRepositoryInterface;
+import com.proxy.api.domain.repositories.PrecioVentaRepositoryInterface;
+import com.proxy.api.domain.repositories.StockRepositoryInterface;
+import com.proxy.api.domain.repositories.VentasRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ProductServices implements ProductServicesInterface {
 
     @Autowired
-    private ProductRepositoryInterface productRepository;
+    private VentasRepositoryInterface productRepository;
 
-    public List<Producto> getProductsByEAN(String productEAN){
-        return this.productRepository.getProductosByCodigoDeBarras(productEAN);
-    }
+    @Autowired
+    private StockRepositoryInterface stockRepository;
 
-    public Producto getProductByCodigoMaterial(String codigoMaterial){
-        return this.productRepository.getProductoByCodigoMaterial(codigoMaterial);
+    @Autowired
+    private PrecioVentaRepositoryInterface precioVentaRepository;
+
+    @Autowired
+    private InputsRepositoryInterface inputsRepository;
+
+    public Product getProductByCodigoProducto(String codigoProducto) {
+        return new Product(
+                this.productRepository.getKpi_VentasByCodigoProducto(codigoProducto),
+                this.stockRepository.getKpi_StocksByCodigoProducto(codigoProducto),
+                this.precioVentaRepository.getKpi_VentasByCodigoProducto(codigoProducto),
+                this.inputsRepository.getKpi_InputsByCodigoProducto(codigoProducto)
+        );
     }
 }
