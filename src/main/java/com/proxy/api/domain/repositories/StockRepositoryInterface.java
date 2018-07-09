@@ -4,9 +4,7 @@ import com.proxy.api.domain.model.Kpi_Stock;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 public interface StockRepositoryInterface extends JpaRepository<Kpi_Stock, Integer> {
-    List<Kpi_Stock> getKpi_StocksByCodigoProducto(String codigoProducto);
+    Kpi_Stock getKpiStockByCodigoProducto(String codigoProducto);
 }

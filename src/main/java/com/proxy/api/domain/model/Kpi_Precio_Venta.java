@@ -1,6 +1,10 @@
 package com.proxy.api.domain.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -9,25 +13,23 @@ public class Kpi_Precio_Venta implements Serializable {
 
     public static final String tableName = "V_Kpi_Precio_Venta";
 
-    @Id
-    @GeneratedValue
-    @Column(name = "Codigo_Producto")
-    private String codigoProducto;
+    @EmbeddedId
+    private IdKeyPrecioVenta tarifa;
+
+    @NotNull
+    @Column(name = "Fecha_Pvp")
+    private String fechaPvp;
+
+    @NotNull
+    @Column(name = "Fecha_Pcb")
+    private String fechaPcb;
+
 
     @Column(name = "Descripcion_Producto")
     private String descripcionProducto;
 
-    @Column(name = "Fecha_Pcb")
-    private String fechaPcb;
-
     @Column(name = "PCB")
     private String pcb;
-
-    @Column(name = "Tipo_Tarifa")
-    private String tipoTarifa;
-
-    @Column(name = "Fecha_Pvp")
-    private String fechaPvp;
 
     @Column(name = "Pvp")
     private String pvp;
@@ -35,12 +37,12 @@ public class Kpi_Precio_Venta implements Serializable {
     public Kpi_Precio_Venta() {
     }
 
-    public String getCodigoProducto() {
-        return codigoProducto;
+    public IdKeyPrecioVenta getTarifa() {
+        return this.tarifa;
     }
 
-    public void setCodigoProducto(String codigoProducto) {
-        this.codigoProducto = codigoProducto;
+    public void setTarifa(IdKeyPrecioVenta tarifa) {
+        this.tarifa = tarifa;
     }
 
     public String getDescripcionProducto() {
@@ -51,14 +53,6 @@ public class Kpi_Precio_Venta implements Serializable {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public String getFechaPcb() {
-        return fechaPcb;
-    }
-
-    public void setFechaPcb(String fechaPcb) {
-        this.fechaPcb = fechaPcb;
-    }
-
     public String getPcb() {
         return pcb;
     }
@@ -67,12 +61,12 @@ public class Kpi_Precio_Venta implements Serializable {
         this.pcb = pcb;
     }
 
-    public String getTipoTarifa() {
-        return tipoTarifa;
+    public String getPvp() {
+        return pvp;
     }
 
-    public void setTipoTarifa(String tipoTarifa) {
-        this.tipoTarifa = tipoTarifa;
+    public void setPvp(String pvp) {
+        this.pvp = pvp;
     }
 
     public String getFechaPvp() {
@@ -83,12 +77,12 @@ public class Kpi_Precio_Venta implements Serializable {
         this.fechaPvp = fechaPvp;
     }
 
-    public String getPvp() {
-        return pvp;
+    public String getFechaPcb() {
+        return fechaPcb;
     }
 
-    public void setPvp(String pvp) {
-        this.pvp = pvp;
+    public void setFechaPcb(String fechaPcb) {
+        this.fechaPcb = fechaPcb;
     }
 }
 

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface InputsRepositoryInterface extends JpaRepository<Kpi_Input, Integer> {
-    List<Kpi_Input> getKpi_InputsByCodigoProducto(String codigoProducto);
+    List<Kpi_Input> getKpiInputsByCodigoProducto(String codigoProducto);
 }

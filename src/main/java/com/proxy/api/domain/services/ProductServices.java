@@ -30,10 +30,10 @@ public class ProductServices implements ProductServicesInterface {
     @Cacheable("product")
     public Product getProductByCodigoProducto(String codigoProducto) {
         return new Product(
-                this.productRepository.getKpi_VentasByCodigoProducto(codigoProducto),
-                this.stockRepository.getKpi_StocksByCodigoProducto(codigoProducto),
-                this.precioVentaRepository.getKpi_VentasByCodigoProducto(codigoProducto),
-                this.inputsRepository.getKpi_InputsByCodigoProducto(codigoProducto)
+                this.productRepository.getKpiVentaByCodigoProducto(codigoProducto),
+                this.stockRepository.getKpiStockByCodigoProducto(codigoProducto),
+                this.precioVentaRepository.getKpiPrecioVentasByTarifaCodigoProducto(codigoProducto),
+                this.inputsRepository.getKpiInputsByCodigoProducto(codigoProducto)
         );
     }
 }

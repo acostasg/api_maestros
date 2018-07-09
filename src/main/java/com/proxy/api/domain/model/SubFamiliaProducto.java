@@ -1,7 +1,5 @@
 package com.proxy.api.domain.model;
 
-import org.springframework.cache.annotation.Cacheable;
-
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -10,7 +8,6 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "Sub_Familia_Producto", schema = "MIUBESOL", catalog = "Benchmarking")
-@Cacheable("SubFamiliaProducto")
 public class SubFamiliaProducto implements Serializable {
 
     public static final String tableName = "SubFamilia_Producto";
