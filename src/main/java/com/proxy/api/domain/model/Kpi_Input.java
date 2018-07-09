@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "V_Kpi_Inputs")
+@Table(name = "V_Kpi_Inputs", schema = "dbo", catalog = "Realidad_Aumentada")
 public class Kpi_Input implements Serializable {
 
     public static final String tableName = "V_Kpi_Inputs";

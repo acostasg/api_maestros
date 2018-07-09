@@ -6,9 +6,13 @@ import com.proxy.api.domain.repositories.PrecioVentaRepositoryInterface;
 import com.proxy.api.domain.repositories.StockRepositoryInterface;
 import com.proxy.api.domain.repositories.VentasRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+
 @Service
+@Component
 public class ProductServices implements ProductServicesInterface {
 
     @Autowired
@@ -23,6 +27,7 @@ public class ProductServices implements ProductServicesInterface {
     @Autowired
     private InputsRepositoryInterface inputsRepository;
 
+    @Cacheable("product")
     public Product getProductByCodigoProducto(String codigoProducto) {
         return new Product(
                 this.productRepository.getKpi_VentasByCodigoProducto(codigoProducto),

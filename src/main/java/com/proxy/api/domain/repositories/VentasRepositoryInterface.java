@@ -1,6 +1,5 @@
 package com.proxy.api.domain.repositories;
 
-import com.proxy.api.domain.model.Kpi_Stock;
 import com.proxy.api.domain.model.Kpi_Venta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

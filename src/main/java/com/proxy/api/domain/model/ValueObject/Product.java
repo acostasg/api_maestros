@@ -9,6 +9,11 @@ import java.util.List;
 
 public class Product {
 
+    private List<Kpi_Venta> kpiVentas;
+    private List<Kpi_Stock> kpiStocks;
+    private List<Kpi_Precio_Venta> kpiPrecioVentas;
+    private List<Kpi_Input> kpiInputs;
+
     public Product(
             List<Kpi_Venta> kpiVenta,
             List<Kpi_Stock> kpiStocks,
@@ -20,14 +25,6 @@ public class Product {
         this.kpiPrecioVentas = kpiPrecioVentas;
         this.kpiInputs = kpiInputs;
     }
-
-    private List<Kpi_Venta> kpiVentas;
-
-    private List<Kpi_Stock> kpiStocks;
-
-    private List<Kpi_Precio_Venta> kpiPrecioVentas;
-
-    private List<Kpi_Input> kpiInputs;
 
     public List<Kpi_Venta> getKpiVentas() {
         return kpiVentas;

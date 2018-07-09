@@ -5,6 +5,7 @@ import com.proxy.api.domain.model.SubFamiliaProducto;
 import com.proxy.api.domain.repositories.FamilyRepositoryInterface;
 import com.proxy.api.domain.repositories.SubFamilyRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,11 +20,13 @@ public class FamilyServices implements FamilyServicesInterface {
     private SubFamilyRepositoryInterface subFamilyRepository;
 
     @Override
+    @Cacheable("family")
     public List<FamiliaProducto> getAll() {
         return this.familyRepository.findAll();
     }
 
     @Override
+    @Cacheable("subFamily")
     public List<SubFamiliaProducto> getSubFamiliesByFamiliaID(Integer codigoFamilia) {
         return this.subFamilyRepository.findByIdKeySubFamily_CodigoFamilia(codigoFamilia);
     }
