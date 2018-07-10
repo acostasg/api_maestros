@@ -4,17 +4,17 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Familia_Producto", schema = "MIUBESOL", catalog = "Benchmarking")
+@Table(name = "WEB_PROD_COMP_CATE", schema = "MIUBESOL", catalog = "Benchmarking")
 public class FamiliaProducto implements Serializable {
 
     public static final String tableName = "Familia_Producto";
 
     @Id
     @GeneratedValue
-    @Column(name = "Codigo_Familia")
+    @Column(name = "CATE_ID")
     private Integer codigoFamilia;
 
-    @Column(name = "Descripcion_Familia")
+    @Column(name = "CATE_DES")
     private String descripcionFamilia;
 
     public FamiliaProducto() {

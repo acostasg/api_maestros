@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FamilyRepositoryInterface extends JpaRepository<FamiliaProducto, Integer> {
 
+
+
 }

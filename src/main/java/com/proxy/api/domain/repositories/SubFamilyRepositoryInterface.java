@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface SubFamilyRepositoryInterface extends JpaRepository<SubFamiliaProducto, IdKeySubFamily> {
 
-    List<SubFamiliaProducto> findByIdKeySubFamily_CodigoFamilia(Integer codigoFamilia);
+    List<SubFamiliaProducto> findByIdKeySubFamilyCodigoFamiliaOrderByDescripcionSubFamilia(Integer codigoFamilia);
 
 }

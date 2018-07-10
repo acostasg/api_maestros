@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Sub_Familia_Producto", schema = "MIUBESOL", catalog = "Benchmarking")
+@Table(name = "WEB_PROD_COMP_SUB_CATE", schema = "MIUBESOL", catalog = "Benchmarking")
 public class SubFamiliaProducto implements Serializable {
 
     public static final String tableName = "SubFamilia_Producto";
@@ -15,7 +15,7 @@ public class SubFamiliaProducto implements Serializable {
     @EmbeddedId
     private IdKeySubFamily idKeySubFamily;
 
-    @Column(name = "Descripcion_Sub_Familia")
+    @Column(name = "SUB_DES")
     private String descripcionSubFamilia;
 
 

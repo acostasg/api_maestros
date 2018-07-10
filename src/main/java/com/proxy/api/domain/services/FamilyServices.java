@@ -6,6 +6,7 @@ import com.proxy.api.domain.repositories.FamilyRepositoryInterface;
 import com.proxy.api.domain.repositories.SubFamilyRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,12 +23,16 @@ public class FamilyServices implements FamilyServicesInterface {
     @Override
     @Cacheable("family")
     public List<FamiliaProducto> getAll() {
-        return this.familyRepository.findAll();
+        return this.familyRepository.findAll(sortByIdAsc());
+    }
+
+    private Sort sortByIdAsc() {
+        return new Sort(Sort.Direction.ASC, "descripcionFamilia");
     }
 
     @Override
     @Cacheable("subFamily")
     public List<SubFamiliaProducto> getSubFamiliesByFamiliaID(Integer codigoFamilia) {
-        return this.subFamilyRepository.findByIdKeySubFamily_CodigoFamilia(codigoFamilia);
+        return this.subFamilyRepository.findByIdKeySubFamilyCodigoFamiliaOrderByDescripcionSubFamilia(codigoFamilia);
     }
 }

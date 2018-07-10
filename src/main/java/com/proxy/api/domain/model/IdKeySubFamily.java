@@ -9,11 +9,11 @@ import java.io.Serializable;
 public class IdKeySubFamily implements Serializable {
 
     @NotNull
-    @Column(name = "Codigo_Sub_Familia")
+    @Column(name = "SUB_ID")
     private Integer codigoSubFamilia;
 
     @NotNull
-    @Column(name = "Codigo_Familia")
+    @Column(name = "SUB_CATE_ID")
     private Integer codigoFamilia;
 
     public IdKeySubFamily() {
