@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Product {
 
-    private Kpi_Venta VentasAcumuladasUltimoAño;
+    private Kpi_Venta VentasAcumuladasUltimoExercicio;
     private Kpi_Stock StockActual;
     private List<Kpi_Precio_Venta> PrecioVentasActual;
     private List<Kpi_Input> InputsMercadona;
@@ -19,15 +19,15 @@ public class Product {
             List<Kpi_Input> kpiInputs,
             List<Kpi_Venta_Mensuales> kpiVentaMensuales
     ) {
-        this.VentasAcumuladasUltimoAño = kpiVenta;
+        this.VentasAcumuladasUltimoExercicio = kpiVenta;
         this.StockActual = kpiStocks;
         this.PrecioVentasActual = kpiPrecioVentas;
         this.InputsMercadona = kpiInputs;
         this.VentasPorMeses = kpiVentaMensuales;
     }
 
-    public Kpi_Venta getVentasAcumuladasUltimoAño() {
-        return VentasAcumuladasUltimoAño;
+    public Kpi_Venta getVentasAcumuladasUltimoExercicio() {
+        return VentasAcumuladasUltimoExercicio;
     }
 
     public Kpi_Stock getStockActual() {
