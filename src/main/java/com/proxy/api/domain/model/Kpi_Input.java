@@ -15,7 +15,7 @@ public class Kpi_Input implements Serializable {
     private String codigoProducto;
 
     @Column(name = "Numero_Inputs_Año_Curso")
-    private String numeroInputsExercicioEnCurso;
+    private String numeroInputsEjercicioEnCurso;
 
     @Column(name = "Tipo_expediente")
     private String tipoExpediente;
@@ -28,12 +28,12 @@ public class Kpi_Input implements Serializable {
         this.codigoProducto = codigoProducto;
     }
 
-    public String getNumeroInputsExercicioEnCurso() {
-        return numeroInputsExercicioEnCurso;
+    public String getNumeroInputsEjercicioEnCurso() {
+        return numeroInputsEjercicioEnCurso;
     }
 
-    public void setNumeroInputsExercicioEnCurso(String numeroInputsExercicioEnCurso) {
-        this.numeroInputsExercicioEnCurso = numeroInputsExercicioEnCurso;
+    public void setNumeroInputsEjercicioEnCurso(String numeroInputsEjercicioEnCurso) {
+        this.numeroInputsEjercicioEnCurso = numeroInputsEjercicioEnCurso;
     }
 
     public String getTipoExpediente() {
