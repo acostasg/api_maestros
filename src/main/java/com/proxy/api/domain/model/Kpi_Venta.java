@@ -61,9 +61,7 @@ public class Kpi_Venta implements Serializable {
     }
 
     private String getNumberWithFormat(float number) {
-        NumberFormat format = NumberFormat.getNumberInstance(Locale.ITALY);
-        format.setMinimumFractionDigits(2);
-        return format.format(number)+" "+this.unidadMedida;
+        return NumberFormat.getNumberInstance(Locale.ITALY).format(number);
     }
 
 }
