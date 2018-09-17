@@ -2,6 +2,8 @@ package com.proxy.api.domain.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 @Entity
 @Table(name = "V_Kpi_Stock", schema = "dbo", catalog = "Realidad_Aumentada")
@@ -68,24 +70,30 @@ public class Kpi_Stock implements Serializable {
         this.ean = ean;
     }
 
-    public float getStockAlmacenesMercadona() {
-        return stockAlmacenesMercadona;
+    public String getStockAlmacenesMercadona() {
+        return getNumberWithFormat(this.stockAlmacenesMercadona);
+    }
+
+    private String getNumberWithFormat(float number) {
+        NumberFormat format = NumberFormat.getNumberInstance(Locale.ITALY);
+        format.setMinimumFractionDigits(2);
+        return format.format(number)+ " Unidades";
     }
 
     public void setStockAlmacenesMercadona(float stockAlmacenesMercadona) {
         this.stockAlmacenesMercadona = stockAlmacenesMercadona;
     }
 
-    public float getStockTiendasMercadona() {
-        return stockTiendasMercadona;
+    public String getStockTiendasMercadona() {
+        return getNumberWithFormat(this.stockTiendasMercadona);
     }
 
     public void setStockTiendasMercadona(float stockTiendasMercadona) {
         this.stockTiendasMercadona = stockTiendasMercadona;
     }
 
-    public float getStockTotalMercadona() {
-        return stockTotalMercadona;
+    public String getStockTotalMercadona() {
+        return getNumberWithFormat(this.stockTotalMercadona);
     }
 
     public void setStockTotalMercadona(float stockTotalMercadona) {

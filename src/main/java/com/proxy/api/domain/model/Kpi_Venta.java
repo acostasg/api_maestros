@@ -2,6 +2,8 @@ package com.proxy.api.domain.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 @Entity
 @Table(name = "V_Kpi_Venta", schema = "dbo", catalog = "Realidad_Aumentada")
@@ -42,8 +44,8 @@ public class Kpi_Venta implements Serializable {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public float getUnidadesVendidas() {
-        return unidadesVendidas;
+    public String getUnidadesVendidas() {
+        return getNumberWithFormat(this.unidadesVendidas);
     }
 
     public void setUnidadesVendidas(float unidadesVendidas) {
@@ -56,6 +58,12 @@ public class Kpi_Venta implements Serializable {
 
     public void setUnidadMedida(String unidadMedida) {
         this.unidadMedida = unidadMedida;
+    }
+
+    private String getNumberWithFormat(float number) {
+        NumberFormat format = NumberFormat.getNumberInstance(Locale.ITALY);
+        format.setMinimumFractionDigits(2);
+        return format.format(number)+" "+this.unidadMedida;
     }
 
 }
