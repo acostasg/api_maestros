@@ -1,10 +1,10 @@
 package com.proxy.api.domain.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Entity
 @Table(name = "V_Kpi_Ventas_Mensuales", schema = "dbo", catalog = "Realidad_Aumentada")

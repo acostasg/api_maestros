@@ -27,4 +27,19 @@
            timeToLiveSeconds="300" timeToIdleSeconds="0"
            memoryStoreEvictionPolicy="LFU" transactionalMode="off">
     </cache>
+    <cache name="marcas"
+           maxElementsInMemory="100" eternal="false"
+           overflowToDisk="false"
+           timeToLiveSeconds="300" timeToIdleSeconds="0"
+           memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+    </cache>
+    <cache name="marcasEmpresa"
+           maxElementsInMemory="100" eternal="false"
+           overflowToDisk="false"
+           timeToLiveSeconds="300" timeToIdleSeconds="0"
+           memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+    </cache>
+
+
+
 </ehcache>

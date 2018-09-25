@@ -74,12 +74,12 @@ public class Kpi_Stock implements Serializable {
         return getNumberWithFormat(this.stockAlmacenesMercadona);
     }
 
-    private String getNumberWithFormat(float number) {
-        return NumberFormat.getNumberInstance(Locale.ITALY).format(number);
-    }
-
     public void setStockAlmacenesMercadona(float stockAlmacenesMercadona) {
         this.stockAlmacenesMercadona = stockAlmacenesMercadona;
+    }
+
+    private String getNumberWithFormat(float number) {
+        return NumberFormat.getNumberInstance(Locale.ITALY).format(number);
     }
 
     public String getStockTiendasMercadona() {

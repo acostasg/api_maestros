@@ -17,6 +17,9 @@ public class FamiliaProducto implements Serializable {
     @Column(name = "CATE_DES")
     private String descripcionFamilia;
 
+    @Column(name = "EMPRESA_EXPERT")
+    private String empresaId;
+
     public FamiliaProducto() {
     }
 
@@ -36,4 +39,11 @@ public class FamiliaProducto implements Serializable {
         this.descripcionFamilia = descripcionFamilia;
     }
 
+    public String getEmpresaId() {
+        return empresaId;
+    }
+
+    public void setEmpresaId(String empresaId) {
+        this.empresaId = empresaId;
+    }
 }

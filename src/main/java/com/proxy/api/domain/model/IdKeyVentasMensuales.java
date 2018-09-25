@@ -2,8 +2,6 @@ package com.proxy.api.domain.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
@@ -18,6 +16,7 @@ public class IdKeyVentasMensuales implements Serializable {
     @NotNull
     @Column(name = "Fecha")
     private Date fecha;
+
     public IdKeyVentasMensuales() {
     }
 
